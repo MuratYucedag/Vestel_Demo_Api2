@@ -1,0 +1,26 @@
+﻿@model List<Category1>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top:40px; margin-left:40px; margin-right:40px">
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Kategori Adı</th>
+            <th>Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>
+                    <a asp-action="EditCategory" asp-route-id="@item.Id" class="btn btn-success">Güncelle</a>
+                </td>
+            </tr>
+        }
+    </table>
+    <a asp-action="AddCategory" class="btn btn-outline-primary">Yeni Kategori</a>
+</div>

@@ -1,0 +1,16 @@
+﻿@model Category1
+@{
+    ViewData["Title"] = "AddCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="margin-top:40px; margin-left:40px; margin-right:40px">
+    <form asp-action="AddCategory" method="post">
+        <div class="form-group">
+            <label>Kategori Adı</label>
+            <input type="text" asp-for="Name" class="form-control" />
+        </div>
+        <br />
+        <button type="submit" class="btn btn-info">Kaydet</button>
+    </form>
+</div>
